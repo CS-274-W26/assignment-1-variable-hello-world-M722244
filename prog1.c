@@ -1,11 +1,27 @@
-#include <stdio.h> // Necessary for printf()
-
-// TODO Other includes
+#include <stdio.h> // for printf()
+#include <stdlib.h> // for srand()
+#include <time.h> // for time()
 
 
 int main() {
-	// The main function is the entrypoint of the program. When the program
-	// is executed, it will automatically start here.
+	// seed PRNG (# seconds since UNIX epoch: January 1, 1970)
+	srand(time(NULL));
+
+	// create random var
+	int myrand = rand() % 11;
 	
-	// TODO Complete the program
+	// conditions and outputs
+	if(myrand <= 4) {
+		printf("Eat more beef, kick less cats\n");
+	}	
+
+	else if (myrand <= 9) {
+		printf("FRODO LIVES\n");
+	}
+	
+	else {
+		printf("Larn is the best roguelike\n");
+	}
+
+	printf("The random number was: %d\n", myrand);
 }
